@@ -124,8 +124,12 @@ chmod +x ~/.claude/statusline.sh
 
 ### クレジット
 
-- ベーススクリプト: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
-- 指標設計・改善: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
+- ベーススクリプト・OAuth レート制限取得: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
+- フォルダ名表示のアイデア: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
+- IN/OUTトークン・キャッシュ率・コスト表示のアイデア: [@ariyasu](https://x.com/ariyasu)
+- テーマ・セグメント設計の参考: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
+- スパークライン・週次予算の参考: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
+- 指標設計・改善・公開: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
 
 ---
 
@@ -178,5 +182,9 @@ Then restart Claude Code.
 
 ### Credits
 
-- Base script: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
+- Base script & OAuth rate limit fetching: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
+- Folder name display idea: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
+- IN/OUT tokens, cache rate, cost display ideas: [@ariyasu](https://x.com/ariyasu)
+- Theme & segment design reference: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
+- Sparkline & weekly budget reference: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
 - Metrics design & improvements: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
