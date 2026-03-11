@@ -142,12 +142,14 @@ npm i -g @anthropic-ai/claude-code
 
 ### クレジット
 
-- ベーススクリプト・OAuth レート制限取得: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
-- フォルダ名表示のアイデア: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
-- IN/OUTトークン・キャッシュ率・コスト表示のアイデア: [@ariyasu](https://x.com/ariyasu)
-- テーマ・セグメント設計の参考: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
-- スパークライン・週次予算の参考: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
-- 指標設計・改善・公開: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
+| 参考元 | 実装に取り込んだ内容 |
+|--------|-------------------|
+| [@suthio](https://zenn.dev/suthio/articles/f832922e18f994) | スクリプト本体・OAuth APIで5h/7d レート制限取得・プログレスバー（▰▱）・カラーコーディング・APIレスポンスのキャッシュ機構 |
+| [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605) | Line 1 へのフォルダ名表示（`${cwd##*/}`） |
+| [@ariyasu](https://x.com/ariyasu) | IN/OUTトークン数表示・キャッシュヒット率表示・コスト表示（`$X.XX`）・コストを複雑さの指標として捉える考え方 |
+| [@Develop0x](https://x.com/Develop0x) | `>200k` アラートのアイデア（`exceeds_200k_tokens` フィールドを使って実装） |
+| [usedhonda/ccsl](https://github.com/usedhonda/statusline) | 週次予算・スパークライン表示の概念（設計の参考） |
+| [@SATOYUSUKE](https://github.com/SATOYUSUKE) | 上記の統合・gitリポジトリ外での `--` 表示・正しいJSONフィールドパスの特定・各指標のMECE整理 |
 
 ---
 
@@ -210,12 +212,14 @@ Then restart Claude Code.
 
 ### Credits
 
-- Base script & OAuth rate limit fetching: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
-- Folder name display idea: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
-- IN/OUT tokens, cache rate, cost display ideas: [@ariyasu](https://x.com/ariyasu)
-- Theme & segment design reference: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
-- Sparkline & weekly budget reference: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
-- Metrics design & improvements: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
+| Author | What was adopted |
+|--------|-----------------|
+| [@suthio](https://zenn.dev/suthio/articles/f832922e18f994) | Base script, OAuth API for 5h/7d rate limits, progress bar (▰▱), color coding, API response cache |
+| [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605) | Folder name in Line 1 (`${cwd##*/}`) |
+| [@ariyasu](https://x.com/ariyasu) | IN/OUT token display, cache hit rate, cost display (`$X.XX`), the idea of using cost as a complexity proxy |
+| [@Develop0x](https://x.com/Develop0x) | `>200k` alert concept (implemented via `exceeds_200k_tokens` field) |
+| [usedhonda/ccsl](https://github.com/usedhonda/statusline) | Weekly budget & sparkline concepts (design reference) |
+| [@SATOYUSUKE](https://github.com/SATOYUSUKE) | Integration of all above, `--` branch for non-git dirs, correct JSON field path discovery, MECE metrics design |
 
 ---
 
@@ -318,9 +322,11 @@ npm i -g @anthropic-ai/claude-code
 
 ### 致谢
 
-- 基础脚本 & OAuth 限额获取: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
-- 目录名显示灵感: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
-- IN/OUT Token、缓存率、费用显示灵感: [@ariyasu](https://x.com/ariyasu)
-- 主题与分段设计参考: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
-- Sparkline 与每周预算参考: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
-- 指标设计与改进: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
+| 参考来源 | 实际采用的内容 |
+|---------|--------------|
+| [@suthio](https://zenn.dev/suthio/articles/f832922e18f994) | 基础脚本、通过 OAuth API 获取5h/7d 限额、进度条（▰▱）、颜色编码、API 响应缓存机制 |
+| [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605) | 在第1行显示目录名（`${cwd##*/}`） |
+| [@ariyasu](https://x.com/ariyasu) | IN/OUT Token 数显示、缓存命中率显示、费用显示（`$X.XX`）、将费用作为复杂度指标的理念 |
+| [@Develop0x](https://x.com/Develop0x) | `>200k` 警告的构思（通过 `exceeds_200k_tokens` 字段实现） |
+| [usedhonda/ccsl](https://github.com/usedhonda/statusline) | 每周预算与 Sparkline 可视化概念（设计参考） |
+| [@SATOYUSUKE](https://github.com/SATOYUSUKE) | 以上内容的整合、非 Git 目录显示 `--`、正确 JSON 字段路径的发现、各指标的 MECE 整理 |
