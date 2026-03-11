@@ -11,7 +11,7 @@
 
 ---
 
-## 日本語 | [English](#english)
+## 日本語 | [English](#english) | [中文](#中文)
 
 ### これは何？
 
@@ -188,3 +188,93 @@ Then restart Claude Code.
 - Theme & segment design reference: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
 - Sparkline & weekly budget reference: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
 - Metrics design & improvements: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
+
+---
+
+## 中文
+
+### 这是什么？
+
+在 Claude Code 状态栏（屏幕底部）实时显示以下信息的 Shell 脚本。
+
+| 行 | 显示内容 |
+|----|---------|
+| 第1行 | 📁 工作目录　🤖 模型　💰 费用　✏️ 修改行数　🔀 Git 分支 |
+| 第2行 | 🧠 上下文使用率　输入/输出 Token 数　缓存命中率 |
+| 第3行 | ⏱ 5小时限额使用率和重置时间 |
+| 第4行 | 📅 每周限额使用率和重置日期 |
+
+### 各指标说明
+
+**💰 费用（`$4.15`）**
+这是**虚拟费用，并非实际账单金额。**
+Claude Code 在本地按「使用 Token 数 × API 标准单价」计算的估算值。
+- **API Key 用户** → 与实际收费基本一致
+- **订阅用户（Max/Pro）** → 实际不收费。可作为「本次会话消耗了多少算力」的相对指标（复杂指令 = 高费用，高效指令 = 低费用）
+
+**🧠 上下文使用率（`43%`）**
+上下文窗口的使用率，颜色随使用量变化。
+- 🟢 绿色（～49%）：充裕
+- 🟡 黄色（50～79%）：注意
+- 🔴 红色（80%～）：剩余不多
+- ⚠️ `>200k` 警告：超过 200k Token 时显示
+
+**IN / OUT / cache**
+- `IN:251.6K` — 本次会话累计输入 Token 数
+- `OUT:39.8K` — 本次会话累计输出 Token 数
+- `cache:99%` — 缓存命中率。越高说明对话复用效率越好
+
+**⏱ 5h / 📅 7d（第3-4行）**
+Anthropic 订阅限额（5小时窗口和每周窗口）的使用率及重置时间。
+通过 macOS Keychain 中的 OAuth Token 获取。**仅 API Key 用户不显示此内容。**
+
+### 安装（3步）
+
+**1.** 打开终端
+
+**2.** 复制粘贴以下命令并按 Enter:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/install.sh | bash
+```
+
+**3.** 重启 Claude Code
+
+### 运行环境
+
+| 项目 | 要求 |
+|------|------|
+| 操作系统 | macOS（推荐）/ Linux |
+| Claude Code | v1.x 以上 |
+| 依赖命令 | `jq`（`brew install jq`）、`bc`（macOS 自带） |
+| 第3-4行显示 | 需要 macOS + Claude 订阅（Max/Pro） |
+
+<details>
+<summary>常见问题</summary>
+
+**状态栏未显示**
+→ 请完全退出 Claude Code 后重新启动。配置更改在重启后生效。
+
+**`jq: command not found`**
+→ 执行 `brew install jq`。
+
+**第3-4行不显示（明明是订阅用户）**
+→ 请确认是否通过 ChatGPT/Claude 账号登录 Claude Code。仅使用 API Key 认证时无法获取 OAuth Token。
+
+**显示 `IN:0 OUT:0 cache:0%`**
+→ 会话刚开始时显示为 0，属于正常现象。进行几次对话后会更新。
+
+**分支名显示为 `--`**
+→ 正常现象。表示当前在 Git 仓库目录以外（如主目录）启动了 Claude Code。
+在项目目录下启动 `claude` 即可正常显示。
+
+</details>
+
+### 致谢
+
+- 基础脚本 & OAuth 限额获取: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
+- 目录名显示灵感: [@tonkotsuboy_com](https://x.com/tonkotsuboy_com/status/2031168969705734605)
+- IN/OUT Token、缓存率、费用显示灵感: [@ariyasu](https://x.com/ariyasu)
+- 主题与分段设计参考: [@Develop0x / StatusLine Config](https://x.com/Develop0x)
+- Sparkline 与每周预算参考: [usedhonda/ccsl](https://github.com/usedhonda/statusline)
+- 指标设计与改进: [@SATOYUSUKE](https://github.com/SATOYUSUKE)
