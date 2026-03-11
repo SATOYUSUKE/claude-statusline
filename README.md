@@ -72,6 +72,14 @@ curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/i
 
 **3.** Claude Code を再起動
 
+### アンインストール
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/uninstall.sh | bash
+```
+
+Claude Code を再起動すれば元に戻ります。
+
 ### 手動インストール
 
 ```bash
@@ -173,6 +181,14 @@ curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/i
 
 Then restart Claude Code.
 
+### Uninstall
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/uninstall.sh | bash
+```
+
+Then restart Claude Code.
+
 ### Requirements
 
 - macOS (recommended) / Linux
@@ -239,6 +255,14 @@ curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/i
 ```
 
 **3.** 重启 Claude Code
+
+### 卸载
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/uninstall.sh | bash
+```
+
+重启 Claude Code 后即可恢复原状。
 
 ### 运行环境
 
