@@ -112,6 +112,16 @@ chmod +x ~/.claude/statusline.sh
 <details>
 <summary>トラブルシューティング</summary>
 
+**2〜4行目が表示されず、更新通知が出ている**
+→ Claude Code 本体のアップデートエラーが発生しており、ステータスラインの表示領域を占有している場合があります。以下のコマンドで更新してください：
+```bash
+claude install
+```
+または
+```bash
+npm i -g @anthropic-ai/claude-code
+```
+
 **ステータスラインが表示されない**
 → Claude Code を完全に終了して再起動してください。設定変更はセッション再起動後に反映されます。
 
@@ -196,6 +206,8 @@ Then restart Claude Code.
 - `jq` (`brew install jq`)
 - Subscription (Max/Pro) required for Line 3-4
 
+> **Note:** If Claude Code shows an auto-update error, lines 2-4 may not appear until you update: `claude install` or `npm i -g @anthropic-ai/claude-code`
+
 ### Credits
 
 - Base script & OAuth rate limit fetching: [@suthio](https://zenn.dev/suthio/articles/f832922e18f994)
@@ -275,6 +287,16 @@ curl -fsSL https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/u
 
 <details>
 <summary>常见问题</summary>
+
+**第2〜4行不显示，出现更新通知**
+→ Claude Code 本体更新失败，占用了状态栏显示区域。请执行以下命令更新：
+```bash
+claude install
+```
+或
+```bash
+npm i -g @anthropic-ai/claude-code
+```
 
 **状态栏未显示**
 → 请完全退出 Claude Code 后重新启动。配置更改在重启后生效。
