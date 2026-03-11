@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_URL="https://raw.githubusercontent.com/ysato/claude-statusline/main/statusline.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/SATOYUSUKE/claude-statusline/main/statusline.sh"
 TARGET="$HOME/.claude/statusline.sh"
 SETTINGS="$HOME/.claude/settings.local.json"
 
